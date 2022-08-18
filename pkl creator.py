@@ -1,17 +1,22 @@
 import pickle
 import os
 
-data = '''
-version = 8/17/22
-level-version = 8/17/22
+from urllib3 import PoolManager
+from PySimpleGUI import PopupGetFile
+from cryptography.fernet import Fernet
 
-played = 0
-won = 0
-best-time = [None, None, None]
+http = PoolManager()
+key = Fernet(http.request('GET', 'https://gemgames.w3spaces.com/data-key.txt').data)
 
-unlocked-achievements = []
-completed-levels = []
 
-play-time = 0
-'''
+def make(name, data):
+    print(data)
+    if not os.path.isdir('C:/Users/summe/AppData/Local/GEM Games/CodeRandom3/data'):
+        os.makedirs('C:/Users/summe/AppData/Local/GEM Games/CodeRandom3/data')
+    with open('C:/Users/summe/AppData/Local/GEM Games/CodeRandom3/data/' + name + '.pkl', 'wb') as fh:
+        pickle.dump(data, fh)
 
+
+if __name__ == '__main__':
+    with open(PopupGetFile('Select File to be pickled...'), 'rb') as file:
+        make(input('Name of File'), key.encrypt(file.read()))

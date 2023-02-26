@@ -1,0 +1,9 @@
+theme,Random,Set the theme to the given PySimpleGUI theme. Give a random theme if not a valid theme.
+full-screen,1, Set the value to [1] if you want the application to be full screen/otherwise set to 0.
+res_x,1920, The width of the window
+res_y,1080, The height of the window
+play_music,1, Choose to have the background music playing.
+music_vol,.8, The volume of the background music. Values from 0-1.
+play_sounds,1, Choose to have sound effects.
+sound_vol,.5, The volume of the sound effects. Values from 0-1.
+save_data,1, Whether the game keeps track of your progress. Will disable Achievements and game progression.

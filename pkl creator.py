@@ -15,6 +15,8 @@ def make(name, data):
         os.makedirs('C:/Users/summe/AppData/Local/GEM Games/CodeRandom3/data')
     with open('C:/Users/summe/AppData/Local/GEM Games/CodeRandom3/data/' + name + '.pkl', 'wb') as fh:
         pickle.dump(data, fh)
+    with open('C:/Users/summe/Documents/PycharmProjects/CR3-Stuff/data/' + name + '.pkl', 'wb') as fh:
+        pickle.dump(data, fh)
 
 
 if __name__ == '__main__':
